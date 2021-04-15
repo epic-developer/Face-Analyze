@@ -1,0 +1,27 @@
+{
+  "name": "Face-Analyze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epic-developer/Face-Analyze.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epic-developer/Face-Analyze/issues"
+  },
+  "homepage": "https://github.com/epic-developer/Face-Analyze#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "request": "^2.88.2"
+  }
+}
