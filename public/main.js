@@ -3,6 +3,7 @@ var open = true;
 var validFaces = [];
 var mainFace = '';
 var iteration;
+var faceMatcher;
 var scanLoop;
 var total;
 
@@ -71,17 +72,19 @@ async function scan(url) {
     span.innerHTML = 'Analyzing... ' + String(iteration + 1) + ' out of ' + total;
     document.getElementById('Main').appendChild(span);
 
-    var results = await faceapi
-        .detectAllFaces('tempFace1')
-        .withFaceLandmarks()
-        .withFaceDescriptors();
+    if (iteration == 0) {
+        var results = await faceapi
+            .detectAllFaces('tempFace1')
+            .withFaceLandmarks()
+            .withFaceDescriptors();
 
-    if (!results.length) {
-        alert('Invalid image uploaded. Face not found.');
-        return;
+        if (!results.length) {
+            alert('Invalid image uploaded. Face not found.');
+            return;
+        }
+
+        faceMatcher = new faceapi.FaceMatcher(results);
     }
-
-    var faceMatcher = new faceapi.FaceMatcher(results);
 
     var singleResult = await faceapi
         .detectSingleFace('tempFace2')
