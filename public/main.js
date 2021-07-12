@@ -7,6 +7,8 @@ var faceMatcher;
 var scanLoop;
 var total;
 
+console.log('Based on Github: justadudewhohacks/face-api.js');
+
 function displayResults() {
     clearInterval(scanLoop);
     validFaces.sort(function(a, b) {

@@ -100,6 +100,8 @@
           <span style="font-family:Orbitron;color:blue;font-size:280%"><b>CFQI</b></span> <br>
           <span style="font-family:Orbitron;color:white;font-size:180%"><b>Cohort Face Query Interface</b></span>
           <br>
+          <a href="https://drive.google.com/file/d/12j2_UvKHiRtBRNDTmPqB537wxhP68H8n/view" style="font-family:Orbitron;color:blue;font-size:180%">HOW TO USE</a>
+          <br>
           <br>
           <br>
           <input type="file" accept=".png, .jpg" onchange="document.getElementById('picStatus').innerHTML = 'Photo of face successfully uploaded'" class="custom-file-input" id="face" name="fileUpload" />
@@ -110,11 +112,16 @@
           <br>
           <span style="font-family:Orbitron;color:white;font-size:120%">URL of Webpage with Images to Search for Face:&nbsp;&nbsp;&nbsp;</span><input class="largePillInput" type="url" align="center" placeholder="https://www.example.com/" name="Website URL" id="url">
           <br>
-          <span style="font-family:Orbitron;color:white;font-size:120%">AI Sensitivity (OPTIONAL): (0.1 to 0.9)&nbsp;&nbsp;&nbsp;</span><input class="largePillInput" type="number" align="center" placeholder="Default: 0.5" name="AI Sensitivity" id="level">
+          <span style="font-family:Orbitron;color:white;font-size:120%">AI Sensitivity (OPTIONAL): (0.1 to 0.9)&nbsp;&nbsp;&nbsp;</span><input class="largePillInput" type="number" align="center" placeholder="Default: 0.5" name="AI Sensitivity" id="level" step="0.1" min="0.1" max="0.9">
           <br>
           <span style="font-family:Orbitron;color:white;font-size:120%">Lower values will increase sensitivity which will make the AI more strict on matching features between faces. This may result in more accuracy but at the cost of omitting some potentially valid comparisons.</span>
           <br>
           <button class="button" onclick="query(document.getElementById('url').value, document.getElementById('level').value)" id="btn">Query Now</button>
+          <br>
+          <span style="font-family:Orbitron;color:red;font-size:120%">Photosensitive Epileptic Warning: When scanning large data sets, images may appear to flash onto the screen as faces are continuously rapidly displayed and removed as the AI scans them.</span>
+          <br>
+          <br>
+          <span style="font-family:Orbitron;color:white;font-size:120%">Powered by&nbsp;&nbsp;<a href="https://js.tensorflow.org/api/latest/">Google Tensorflow</a>. The most commonly used AI framework used by programmers.</span>
       </center>
   </body>
 </html>
